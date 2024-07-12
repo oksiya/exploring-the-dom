@@ -1,21 +1,40 @@
-const button = document.querySelector('.theMessageButton');
+console.log(document);
+
+// DOM references
 const myMessage = document.querySelector('.myMessage');
-myMessage.innerText = 'This is a message in the DOM!'
+console.log(myMessage);
 
-
-button.addEventListener('click', function() {
-    myMessage.classList.toggle('darkmode')
-})
-
-const fruits = ['Apples', 'Pears', 'Oranges', 'Grapes', 'Bananas'];
-
+const theMessageButton = document.querySelector('.theMessageButton');
+const clearMessageButton = document.querySelector('.clearMessageButton');
+const inputBox = document.querySelector('.theInputValue');
 const fruitList = document.querySelector(".fruits");
 
-for(let i=0;i<fruits.length;i++){
-   // get fruits from the list
+// Show a value in the DOM
+myMessage.innerText = 'This is a message in the DOM!';
+setTimeout(function(){
+    myMessage.innerText = 'This is a message in the DOM!';
+}, 3000);
+
+// Show a message when a button is clicked
+theMessageButton.addEventListener('click', function() {
+    if (inputBox.value.trim().length > 0) {
+       myMessage.innerText = inputBox.value;
+    }
+});
+
+clearMessageButton.addEventListener('click', function() {
+    myMessage.innerText = '';
+});
+
+// Enter and show a value
+myMessage.addEventListener('click', function() {
+    myMessage.classList.toggle('darkmode');
+});
+
+// Create a new DOM element
+const fruits = ['Apples', 'Pears', 'Oranges', 'Grapes', 'Bananas'];
+for(let i = 0; i < fruits.length; i++){
    const fruit = fruits[i];
-   
-   // create a new li element
    const li = document.createElement('li');
    li.innerText = fruit;
    fruitList.appendChild(li);

@@ -1,4 +1,29 @@
 .darkmode {
-      background-color: black;
-      color: white;
+    background-color: black;
+    color: white;
+}
+
+h2 {
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+div {
+    margin: 20px 0;
+}
+
+button, input {
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 16px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    padding: 5px;
+    font-size: 18px;
 }
